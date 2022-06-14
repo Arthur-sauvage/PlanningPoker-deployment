@@ -7,7 +7,7 @@ import io from 'socket.io-client'
 import { Navigation } from "./components";
 
 
-const socket = io.connect("https://secret-stream-38362.herokuapp.com:3001")
+const socket = io.connect("0.0.0.0:3001")
 
 ReactDOM.render(
   <React.StrictMode>

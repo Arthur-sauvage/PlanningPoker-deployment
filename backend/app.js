@@ -12,16 +12,13 @@ const { User } = require("./models/user");
 const { Records } = require("./models/records");
 
 // server
-const url_server = "https://secret-stream-38362.herokuapp.com:" + process.env.PORT
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://secret-stream-38362.herokuapp.com:" + process.env.PORT,
+    origin: "https://secret-stream-38362.herokuapp.com",
     methods: ["GET", "POST"]
   }
 });
-
-console.log("URL SERVER : " + url_server)
 
 
 // database connection
