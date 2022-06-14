@@ -5,10 +5,14 @@ import "./index.css";
 import App from "./App";
 import io from 'socket.io-client'
 import { Navigation } from "./components";
-const os = require('os');
+import {NetworkInfo} from 'react-native-network-info';
 
-const networkInterfaces = os.networkInterfaces();
-const ip = networkInterfaces['eth0'][0]['address']
+var ip;
+
+NetworkInfo.getIPV4Address().then(ipv4Address => {
+  ip = ipv4Address;
+  console.log("IP FRONTEND :" + ipv4Address);
+});
 
 
 const socket = io.connect(ip + ":3001")
