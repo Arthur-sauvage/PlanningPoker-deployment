@@ -7,7 +7,7 @@ import io from 'socket.io-client'
 import { Navigation } from "./components";
 
 
-const socket = io.connect(`http://localhost:3001`)
+const socket = io.connect(`https://gentle-cliffs-96615.herokuapp.com/`)
 
 
 
