@@ -25,6 +25,7 @@ for (const name of Object.keys(nets)) {
           results[name].push(net.address);
       }
   }
+}
 
   console.log(results)
 
