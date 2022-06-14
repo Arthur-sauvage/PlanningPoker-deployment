@@ -6,10 +6,8 @@ import App from "./App";
 import io from 'socket.io-client'
 import { Navigation } from "./components";
 
-console.log(`IP FRONTEND : ${window.location.hostname}`)
 
-
-const socket = io.connect(`http://${window.location.hostname}:3001`)
+const socket = io.connect(`http://localhost:3001`)
 
 
 

@@ -17,7 +17,7 @@ function Login ({socket}) {
 		console.log("handleSubmit Login")
 		e.preventDefault();
 		try {
-			const url = `http://127.0.0.0:3001/api/auth`;
+			const url = `http://localhost:3001/api/auth`;
 			const { data: res } = await axios.post(url, data);
 			console.log(res.message);
 			window.localStorage.setItem("token", res.data);
