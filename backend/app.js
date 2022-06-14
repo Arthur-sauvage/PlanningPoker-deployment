@@ -14,7 +14,7 @@ var  ip = require("ip");
 
   process.env.IP = ip.address();
 
-  console.log(ip)
+  console.log(ip.address())
 
 // server
 const server = http.createServer(app);
