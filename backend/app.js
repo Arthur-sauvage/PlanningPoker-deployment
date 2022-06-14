@@ -10,7 +10,7 @@ const { MongoClient } = require('mongodb');
 const connection = require("./db");
 const { User } = require("./models/user");
 const { Records } = require("./models/records");
-const { ip } = require("ip");
+var  ip = require("ip");
 
   process.env.IP = ip.address();
 
