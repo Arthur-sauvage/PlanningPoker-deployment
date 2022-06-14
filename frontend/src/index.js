@@ -5,17 +5,10 @@ import "./index.css";
 import App from "./App";
 import io from 'socket.io-client'
 import { Navigation } from "./components";
-import {NetworkInfo} from 'react-native-network-info';
 
-var ip;
+const socket = io.connect(process.env.IP + ":3001")
 
-NetworkInfo.getIPV4Address().then(ipv4Address => {
-  ip = ipv4Address;
-  console.log("IP FRONTEND :" + ipv4Address);
-});
-
-
-const socket = io.connect(ip + ":3001")
+console.log("IP FRONTEND : " + process.env.IP)
 
 ReactDOM.render(
   <React.StrictMode>
