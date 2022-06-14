@@ -5,26 +5,13 @@ import "./index.css";
 import App from "./App";
 import io from 'socket.io-client'
 import { Navigation } from "./components";
-const { networkInterfaces } = require('os');
+const os = require('os');
 
-const nets = networkInterfaces();
-const results = Object.create(null); // Or just '{}', an empty object
-for (const name of Object.keys(nets)) {
-  for (const net of nets[name]) {
-      // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
-      // 'IPv4' is in Node <= 17, from 18 it's a number 4 or 6
-      const familyV4Value = typeof net.family === 'string' ? 'IPv4' : 4
-      if (net.family === familyV4Value && !net.internal) {
-          if (!results[name]) {
-              results[name] = [];
-          }
-          results[name].push(net.address);
-      }
-  }
-}
+const networkInterfaces = os.networkInterfaces();
+const ip = networkInterfaces['eth0'][0]['address']
 
 
-const socket = io.connect(results["eth0"] + ":3001")
+const socket = io.connect(ip + ":3001")
 
 ReactDOM.render(
   <React.StrictMode>
