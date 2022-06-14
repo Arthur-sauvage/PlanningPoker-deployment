@@ -15,7 +15,7 @@ const { Records } = require("./models/records");
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.NODE_ENV + ":" + process.env.PORT,
+    origin: "https://secret-stream-38362.herokuapp.com:" + process.env.PORT,
     methods: ["GET", "POST"]
   }
 });
