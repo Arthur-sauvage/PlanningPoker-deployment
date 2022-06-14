@@ -33,8 +33,8 @@
     "socket.io": "^4.5.0"
   },
   "scripts": {
-    "build": "concurrently \"cd frontend && npm install\" \"cd backend && npm install\"",
-    "start": "concurrently \"cd frontend && npm start\" \"cd backend && node app.js\""
+    "build": "cd backend && npm install",
+    "start": "cd backend && node app.js"
   },
   "keywords": [
     "node",
