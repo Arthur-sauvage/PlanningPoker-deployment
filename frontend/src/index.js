@@ -7,7 +7,7 @@ import io from 'socket.io-client'
 import { Navigation } from "./components";
 
 
-const socket = io.connect("http://0.0.0.0:3001")
+const socket = io.connect(process.env.NODE_ENV + ":3001")
 
 ReactDOM.render(
   <React.StrictMode>
