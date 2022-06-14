@@ -15,6 +15,7 @@ var  ip = require("ip");
   process.env.IP = ip.address();
 
   console.log(ip.address())
+  console.log(process.env.PORT)
 
 // server
 const server = http.createServer(app);
