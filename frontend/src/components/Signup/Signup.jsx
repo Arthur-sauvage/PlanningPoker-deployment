@@ -21,7 +21,7 @@ function Signup () {
 		e.preventDefault();
 		try {
 			console.log("handleSubmit Signup")
-			const url = "https://gentle-cliffs-96615.herokuapp.com//api/users/";
+			const url = "https://gentle-cliffs-96615.herokuapp.com/api/users/";
 			const { data: res } = await axios.post(url, data);
 			window.localStorage.setItem("user", JSON.stringify(res.new_user));
 			/*
